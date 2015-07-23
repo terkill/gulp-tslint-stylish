@@ -35,7 +35,7 @@ module Stylish {
         private options: IOptions;
 
         constructor(linterOutputArray: Array<ILinterOutput>, file: Vinyl.File, options?: IOptions) {
-            this.fileName = chalk.underline(path.basename(file.path));
+            this.fileName = chalk.underline(path.relative('./', file.path));
 
             this.linterOutputArray = linterOutputArray;
 

@@ -9,7 +9,7 @@ var Stylish;
     var path = require("path");
     var Reporter = (function () {
         function Reporter(linterOutputArray, file, options) {
-            this.fileName = chalk.underline(path.basename(file.path));
+            this.fileName = chalk.underline(path.relative('./', file.path));
             this.linterOutputArray = linterOutputArray;
             this.count = "    " + chalk.red(logSymbols.error) + " " + this.linterOutputArray.length + " error" + (this.linterOutputArray.length > 1 ? "s" : "");
             this.options = options || {};
